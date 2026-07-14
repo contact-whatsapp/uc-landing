@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>PUBG UC Store • Material</title>
+    <!-- Inter font + Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0d11;
+            background-image: radial-gradient(circle at 30% 10%, #1e232e 0%, #0a0c10 90%);
+            min-height: 100vh;
+            padding: 16px 16px 110px 16px;
+            color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .material-container {
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* surfaces */
+        .surface {
+            background: #181c24;
+            background: rgba(24, 28, 36, 0.85);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.03);
+            padding: 20px 18px;
+            margin-bottom: 20px;
+        }
+
+        .surface-elevated {
+            background: #1e232e;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,215,0,0.08);
+        }
+
+        /* typography */
+        .headline-large {
+            font-weight: 700;
+            font-size: 28px;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #f5b042, #f0c45a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .headline-small {
+            font-weight: 600;
+            font-size: 18px;
+            color: #e8edf5;
+            letter-spacing: -0.2px;
+        }
+
+        .body-medium {
+            font-size: 15px;
+            font-weight: 500;
+            color: #b0b8c9;
+        }
+
+        .label-large {
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            color: #bcc4d6;
+        }
+
+        /* ticker */
+        .ticker-chip {
+            background: #2c3140;
+            color: #f5d47a;
+            padding: 10px 16px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 1px solid #3d4357;
+            backdrop-filter: blur(4px);
+            margin-bottom: 20px;
+        }
+
+        /* UC rows */
+        .uc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 16px;
+            margin-bottom: 6px;
+            background: #232834;
+            border-radius: 60px;
+            transition: background 0.15s;
+            border: 1px solid transparent;
+        }
+
+        .uc-row:hover {
+            background: #2a303f;
+            border-color: #40475e;
+        }
+
+        .uc-row.hot {
+            background: #2f2530;
+            border-left: 6px solid #ff6b4a;
+            border-radius: 60px 16px 16px 60px;
+            box-shadow: 0 0 0 1px rgba(255, 107, 74, 0.15);
+        }
+
+        .uc-row.hot:hover {
+            background: #3d2c38;
+        }
+
+        .uc-amount {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            color: #f0f4ff;
+        }
+
+        .uc-amount .uc-icon {
+            font-size: 22px;
+            line-height: 1;
+        }
+
+        .uc-row.hot .uc-amount .uc-icon {
+            filter: drop-shadow(0 0 2px #ff6b4a);
+        }
+
+        .badge-hot {
+            background: #d9432a;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            padding: 2px 10px;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-left: 6px;
+        }
+
+        .uc-price {
+            font-weight: 700;
+            font-size: 17px;
+            color: #8bdf9e;
+            background: #1a3324;
+            padding: 4px 14px;
+            border-radius: 30px;
+            letter-spacing: 0.2px;
+        }
+
+        .uc-row.hot .uc-price {
+            background: #3a2a24;
+            color: #fcaa8a;
+        }
+
+        /* hot header */
+        .hot-deal-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 28px 0 14px 4px;
+        }
+
+        .hot-deal-header .material-symbols-outlined {
+            color: #ff6b4a;
+            font-size: 28px;
+        }
+
+        /* features */
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 8px 0;
+        }
+
+        .feature-icon {
+            width: 44px;
+            height: 44px;
+            background: #2b3244;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f5b342;
+        }
+
+        .feature-icon .material-symbols-outlined {
+            font-size: 24px;
+        }
+
+        .feature-text {
+            font-weight: 500;
+            font-size: 15px;
+            color: #dce2ed;
+        }
+
+        /* badges grid - only 24/7 support left */
+        .badge-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 6px;
+        }
+
+        .badge-item {
+            background: #1e2430;
+            border-radius: 40px;
+            padding: 12px 6px;
+            text-align: center;
+            border: 1px solid #323a4b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .badge-item .material-symbols-outlined {
+            color: #7cdb9a;
+        }
+
+        /* banner */
+        .banner-placeholder {
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            background: #1e232e;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .banner-placeholder img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ----- STICKY BOTTOM TAB (compact) ----- */
+        .sticky-whatsapp-tab {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 14px 20px 20px 20px;
+            background: #12161e;
+            background: rgba(18, 22, 30, 0.92);
+            backdrop-filter: blur(12px);
+            border-top: 1px solid #2e3547;
+            box-shadow: 0 -8px 28px rgba(0,0,0,0.7);
+            display: flex;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .whatsapp-tab-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 14px 24px;
+            border-radius: 60px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.35);
+            transition: all 0.2s cubic-bezier(0.2, 0, 0, 1);
+            letter-spacing: 0.2px;
+        }
+
+        .whatsapp-tab-btn:hover {
+            background: #1fbd5a;
+            transform: scale(1.01);
+            box-shadow: 0 10px 32px rgba(37, 211, 102, 0.45);
+        }
+
+        .whatsapp-tab-btn .material-symbols-outlined {
+            font-size: 24px;
+        }
+
+        /* utility */
+        .mt-1 { margin-top: 4px; }
+        .mb-1 { margin-bottom: 12px; }
+        .flex { display: flex; align-items: center; gap: 6px; }
+        .gold { color: #f5b342; }
+    </style>
+</head>
+<body>
+<div class="material-container">
+
+    <!-- ticker -->
+    <div class="ticker-chip">
+        <span class="material-symbols-outlined" style="font-size:20px;">bolt</span>
+        <span>ইনস্ট্যান্ট ডেলিভারি · ১০০% সেফ</span>
+    </div>
+
+    <!-- header -->
+    <div style="margin-bottom: 18px; display: flex; flex-direction: column; align-items: flex-start;">
+        <div class="headline-large">
+            <span class="material-symbols-outlined" style="font-size:34px; color:#f5b342; -webkit-text-fill-color: #f5b342;">stadia_controller</span>
+            UC STORE
+        </div>
+        <div class="body-medium" style="margin-top: 4px;">বাংলাদেশি গেমারদের জন্য নির্ভরযোগ্য</div>
+    </div>
+
+    <!-- banner image -->
+    <div class="banner-placeholder surface" style="padding: 0; overflow: hidden; border-radius: 28px;">
+        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="PUBG Mobile UC" style="width:100%; height:auto; display:block;">
+    </div>
+
+    <!-- price list surface -->
+    <div class="surface surface-elevated" style="padding-bottom: 8px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; padding: 0 4px;">
+            <span class="headline-small"><span class="material-symbols-outlined" style="font-size:20px; vertical-align: middle;">list_alt</span> ইউসি প্যাকেজ</span>
+            <span class="label-large" style="background: #2c3345; padding: 4px 14px; border-radius: 40px;">আপডেট</span>
+        </div>
+
+        <!-- standard rows (💸 icon) -->
+        <div class="uc-row">
+            <span class="uc-amount"><span class="uc-icon">💸</span> 10,000 UC</span>
+            <span class="uc-price">৳ ২,১০০</span>
+        </div>
+        <div class="uc-row">
+            <span class="uc-amount"><span class="uc-icon">💸</span> 12,500 UC</span>
+            <span class="uc-price">৳ ২,৫০০</span>
+        </div>
+        <div class="uc-row">
+            <span class="uc-amount"><span class="uc-icon">💸</span> 16,000 UC</span>
+            <span class="uc-price">৳ ৩,২০০</span>
+        </div>
+        <div class="uc-row">
+            <span class="uc-amount"><span class="uc-icon">💸</span> 20,500 UC</span>
+            <span class="uc-price">৳ ৪,০০০</span>
+        </div>
+
+        <!-- hot deal header -->
+        <div class="hot-deal-header">
+            <span class="material-symbols-outlined">whatshot</span>
+            <span style="font-weight:700; font-size:18px; color:#f5a080;">হট ডিল</span>
+            <span style="background:#d9432a; padding:0 12px; border-radius:30px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.5px;">বেস্ট অফার</span>
+        </div>
+
+        <!-- hot rows with 💸 -->
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 25,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৫,১০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 30,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৬,১০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 40,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৭,২০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৮,১০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 65,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৯,৫০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 80,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১১,৩০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 1,00,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৩,০০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 1,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৫,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 2,00,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৬,৫০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 2,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৭,৫০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 3,00,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৮,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 3,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৯,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 4,00,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২১,০০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 4,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২২,০০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 5,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২৩,০০০</span></div>
+    </div>
+
+    <!-- features surface -->
+    <div class="surface">
+        <div class="feature-item">
+            <div class="feature-icon"><span class="material-symbols-outlined">verified</span></div>
+            <div class="feature-text">১০০% গ্যারান্টিড, ব্যান হওয়ার ঝুঁকি নেই</div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon"><span class="material-symbols-outlined">schedule</span></div>
+            <div class="feature-text">৫-১৫ মিনিটে সুপারফাস্ট ডেলিভারি</div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon"><span class="material-symbols-outlined">payments</span></div>
+            <div class="feature-text">বিকাশ, রকেট, নগদে পেমেন্ট</div>
+        </div>
+    </div>
+
+    <!-- only 24/7 support badge (removed verified seller) -->
+    <div class="badge-grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div class="badge-item"><span class="material-symbols-outlined">support_agent</span><span>২৪/৭ সাপোর্ট</span></div>
+        <div class="badge-item"><span class="material-symbols-outlined">security</span><span>সুরক্ষিত লেনদেন</span></div>
+    </div>
+
+    <div style="height: 14px;"></div>
+</div>
+
+<!-- STICKY WHATSAPP TAB (compact text) -->
+<div class="sticky-whatsapp-tab">
+    <a href="https://wa.me/8801XXXXXXXXX?text=হ্যালো,%20আমি%20ফেসবুক%20থেকে%20এসেছি।%20আমি%20PUBG%20UC%20কিনতে%20চাই。" 
+       class="whatsapp-tab-btn" target="_blank">
+        <span class="material-symbols-outlined">chat</span>
+        WhatsApp-এ অর্ডার করুন
+        <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
+    </a>
+</div>
+
+</body>
+</html>
