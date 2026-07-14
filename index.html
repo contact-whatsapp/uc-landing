@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>PUBG UC Store • Material</title>
+    <title>PUBG UC Store •</title>
     <!-- Inter font + Material Symbols -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0,1" />
@@ -215,45 +215,55 @@
             color: #dce2ed;
         }
 
-        /* badges grid */
-        .badge-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 6px;
-        }
-
-        .badge-item {
-            background: #1e2430;
-            border-radius: 40px;
-            padding: 12px 6px;
-            text-align: center;
-            border: 1px solid #323a4b;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .badge-item .material-symbols-outlined {
-            color: #7cdb9a;
-        }
-
         /* ----- STICKY BOTTOM TAB ----- */
         .sticky-whatsapp-tab {
             position: fixed;
             bottom: 0;
             left: 0;
             width: 100%;
-            padding: 14px 20px 20px 20px;
+            padding: 12px 20px 16px 20px;
             background: #12161e;
-            background: rgba(18, 22, 30, 0.92);
+            background: rgba(18, 22, 30, 0.94);
             backdrop-filter: blur(12px);
             border-top: 1px solid #2e3547;
             box-shadow: 0 -8px 28px rgba(0,0,0,0.7);
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             z-index: 999;
+        }
+
+        /* উপরের নম্বর স্টাইল - শুধু আইকন + নম্বর */
+        .whatsapp-number {
+            font-size: 13px;
+            font-weight: 500;
+            color: #8a94a8;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.04);
+            padding: 4px 14px;
+            border-radius: 30px;
+            border: 1px solid rgba(255,255,255,0.05);
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+            margin-bottom: 8px;
+        }
+
+        .whatsapp-number:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-number:active {
+            transform: scale(0.97);
+        }
+
+        .whatsapp-number .material-symbols-outlined {
+            font-size: 18px;
+            color: #25D366;
         }
 
         .whatsapp-tab-btn {
@@ -285,6 +295,41 @@
             font-size: 24px;
         }
 
+        /* ===== টোস্ট মেসেজ ===== */
+        .toast-message {
+            position: fixed;
+            bottom: 110px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: #1e232e;
+            color: #e8edf5;
+            padding: 10px 24px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            border: 1px solid #2f364a;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+        }
+
+        .toast-message.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast-message .material-symbols-outlined {
+            font-size: 20px;
+            color: #25D366;
+        }
+
         /* utility */
         .mt-1 { margin-top: 4px; }
         .mb-1 { margin-bottom: 12px; }
@@ -307,7 +352,7 @@
             <span class="material-symbols-outlined" style="font-size:34px; color:#f5b342; -webkit-text-fill-color: #f5b342;">stadia_controller</span>
             UC STORE
         </div>
-        <div class="body-medium" style="margin-top: 4px;">বাংলাদেশি গেমারদের জন্য নির্ভরযোগ্য</div>
+        <div class="body-medium" style="margin-top: 4px;">পানির দামে সস্তায় কার্ডিং ইউসি কিনুন</div>
     </div>
 
     <!-- price list surface -->
@@ -349,18 +394,27 @@
         <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৮,১০০</span></div>
         <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 65,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৯,৫০০</span></div>
         <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 80,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১১,৩০০</span></div>
-        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 1,00,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৩,০০০</span></div>
-        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 1,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৫,৯৯০</span></div>
-        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 2,00,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৬,৫০০</span></div>
-        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 2,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৭,৫০০</span></div>
-        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 3,00,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৮,৯৯০</span></div>
-        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 3,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৯,৯৯০</span></div>
-        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 4,00,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২১,০০০</span></div>
-        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 4,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২২,০০০</span></div>
-        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 5,50,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২৩,০০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 100,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৩,০০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 150,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৫,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 200,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৬,৫০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 250,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৭,৫০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 300,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ১৮,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 350,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২০,৫০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 400,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২১,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 450,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২৩,৫০০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 500,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২৪,৪৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 550,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২৫,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 600,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২৭,৪৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 650,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ২৮,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 700,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৩০,৪৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 750,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৩১,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 800,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৩৩,৪৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 850,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৩৪,৯৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 900,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৩৬,৪৯০</span></div>
+        <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 950,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৩৭,৯৯০</span></div>
     </div>
 
-    <!-- features surface -->
+    <!-- features surface - শুধু বিকাশ রাখা হলো -->
     <div class="surface">
         <div class="feature-item">
             <div class="feature-icon"><span class="material-symbols-outlined">verified</span></div>
@@ -372,14 +426,8 @@
         </div>
         <div class="feature-item">
             <div class="feature-icon"><span class="material-symbols-outlined">payments</span></div>
-            <div class="feature-text">বিকাশ, রকেট, নগদে পেমেন্ট</div>
+            <div class="feature-text">বিকাশ পেমেন্ট</div>
         </div>
-    </div>
-
-    <!-- badges -->
-    <div class="badge-grid">
-        <div class="badge-item"><span class="material-symbols-outlined">support_agent</span><span>২৪/৭ সাপোর্ট</span></div>
-        <div class="badge-item"><span class="material-symbols-outlined">security</span><span>সুরক্ষিত লেনদেন</span></div>
     </div>
 
     <div style="height: 14px;"></div>
@@ -387,13 +435,56 @@
 
 <!-- STICKY WHATSAPP TAB -->
 <div class="sticky-whatsapp-tab">
-    <a href="https://wa.me/8801XXXXXXXXX?text=হ্যালো,%20আমি%20ফেসবুক%20থেকে%20এসেছি।%20আমি%20PUBG%20UC%20কিনতে%20চাই।" 
+    <!-- নাম্বার - শুধু আইকন + নম্বর (টেক্সট বাদ) -->
+    <div class="whatsapp-number" onclick="copyNumber()">
+        <span class="material-symbols-outlined"></span>
+        +880 1751-326250
+    </div>
+    
+    <a href="https://wa.me/8801751326250?text=হ্যালো,%20আমি%20CARDING%20UC%20কিনতে%20চাই।" 
        class="whatsapp-tab-btn" target="_blank">
         <span class="material-symbols-outlined">chat</span>
         WhatsApp-এ অর্ডার করুন
         <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
     </a>
 </div>
+
+<!-- ===== টোস্ট মেসেজ ===== -->
+<div class="toast-message" id="toastMessage">
+    <span class="material-symbols-outlined">check_circle</span>
+    <span id="toastText">নম্বর কপি হয়েছে!</span>
+</div>
+
+<script>
+    function copyNumber() {
+        const number = '01751326250';
+        
+        navigator.clipboard.writeText(number).then(() => {
+            showToast('📋 নম্বর কপি হয়েছে!');
+        }).catch(() => {
+            const textArea = document.createElement('textarea');
+            textArea.value = number;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            showToast('📋 নম্বর কপি হয়েছে!');
+        });
+    }
+
+    function showToast(message) {
+        const toast = document.getElementById('toastMessage');
+        const toastText = document.getElementById('toastText');
+        toastText.textContent = message;
+        
+        toast.classList.add('show');
+        
+        clearTimeout(toast._timeout);
+        toast._timeout = setTimeout(() => {
+            toast.classList.remove('show');
+        }, 2000);
+    }
+</script>
 
 </body>
 </html>
