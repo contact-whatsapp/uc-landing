@@ -215,7 +215,7 @@
             color: #dce2ed;
         }
 
-        /* badges grid - only 24/7 support left */
+        /* badges grid */
         .badge-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -239,7 +239,7 @@
             color: #7cdb9a;
         }
 
-        /* ----- STICKY BOTTOM TAB (compact) ----- */
+        /* ----- STICKY BOTTOM TAB ----- */
         .sticky-whatsapp-tab {
             position: fixed;
             bottom: 0;
@@ -290,118 +290,6 @@
         .mb-1 { margin-bottom: 12px; }
         .flex { display: flex; align-items: center; gap: 6px; }
         .gold { color: #f5b342; }
-
-        /* ===== লাইটবক্স / মডাল স্টাইল ===== */
-        .lightbox-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.92);
-            backdrop-filter: blur(8px);
-            z-index: 9999;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            cursor: pointer;
-            animation: fadeIn 0.25s ease;
-        }
-
-        .lightbox-overlay.active {
-            display: flex;
-        }
-
-        .lightbox-overlay img {
-            max-width: 100%;
-            max-height: 90vh;
-            object-fit: contain;
-            border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-            cursor: default;
-            transform: scale(0.95);
-            animation: zoomIn 0.3s ease forwards;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            color: #fff;
-            font-size: 36px;
-            cursor: pointer;
-            background: rgba(255,255,255,0.1);
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.2s;
-            border: 1px solid rgba(255,255,255,0.15);
-        }
-
-        .lightbox-close:hover {
-            background: rgba(255,255,255,0.2);
-            transform: rotate(90deg);
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(0.9); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
-        }
-
-        /* ইমেজের উপর হোভার ইফেক্ট (ইঙ্গিত দেয় যে ক্লিক করা যায়) */
-        .feedback-image-wrapper {
-            cursor: pointer;
-            border-radius: 20px;
-            overflow: hidden;
-            border: 1px solid #2f364a;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
-        }
-
-        .feedback-image-wrapper:hover {
-            transform: scale(1.01);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-        }
-
-        .feedback-image-wrapper img {
-            width: 100%;
-            height: auto;
-            display: block;
-            background: #0b0d11;
-        }
-
-        /* ইমেজের উপর "ক্লিক করুন" ইন্ডিকেটর */
-        .click-hint {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(0,0,0,0.7);
-            backdrop-filter: blur(4px);
-            color: #fff;
-            font-size: 11px;
-            padding: 4px 12px;
-            border-radius: 30px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            border: 1px solid rgba(255,255,255,0.1);
-            opacity: 0.7;
-            transition: opacity 0.2s;
-        }
-
-        .feedback-image-wrapper:hover .click-hint {
-            opacity: 1;
-        }
     </style>
 </head>
 <body>
@@ -429,7 +317,7 @@
             <span class="label-large" style="background: #2c3345; padding: 4px 14px; border-radius: 40px;">আপডেট</span>
         </div>
 
-        <!-- standard rows (💸 icon) -->
+        <!-- standard rows -->
         <div class="uc-row">
             <span class="uc-amount"><span class="uc-icon">💸</span> 10,000 UC</span>
             <span class="uc-price">৳ ২,১০০</span>
@@ -454,7 +342,7 @@
             <span style="background:#d9432a; padding:0 12px; border-radius:30px; font-size:11px; font-weight:700; color:#fff; letter-spacing:0.5px;">বেস্ট অফার</span>
         </div>
 
-        <!-- hot rows with 💸 -->
+        <!-- hot rows -->
         <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 25,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৫,১০০</span></div>
         <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 30,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৬,১০০</span></div>
         <div class="uc-row hot"><span class="uc-amount"><span class="uc-icon">💸</span> 40,000 UC <span class="badge-hot">Hot</span></span><span class="uc-price">৳ ৭,২০০</span></div>
@@ -488,54 +376,16 @@
         </div>
     </div>
 
-    <!-- only 24/7 support badge (removed verified seller) -->
-    <div class="badge-grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
+    <!-- badges -->
+    <div class="badge-grid">
         <div class="badge-item"><span class="material-symbols-outlined">support_agent</span><span>২৪/৭ সাপোর্ট</span></div>
         <div class="badge-item"><span class="material-symbols-outlined">security</span><span>সুরক্ষিত লেনদেন</span></div>
     </div>
 
-    <!-- ============= CUSTOMERS FEEDBACK স্কিনসট সেকশন ============= -->
-    <div class="surface" style="margin-top: 20px; padding-bottom: 16px;">
-        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-            <span class="material-symbols-outlined" style="color: #7cdb9a; font-size: 28px;">rate_review</span>
-            <span class="headline-small" style="font-size: 18px;">গ্রাহকদের ফিডব্যাক</span>
-            <span style="margin-left: auto; background: #1a3324; color: #8bdf9e; padding: 2px 12px; border-radius: 40px; font-size: 11px; font-weight: 600;">বাস্তব</span>
-        </div>
-
-        <!-- স্কিনসট ইমেজ (ক্লিক করলে লাইটবক্স খুলবে) -->
-        <div class="feedback-image-wrapper" onclick="openLightbox()">
-            <img src="https://i.ibb.co.com/FkBBsdY8/99E91C62-8068-4312-85DC-5B9F95951630.jpg" 
-                 alt="Customers Feedback Screenshot" 
-                 id="feedbackImage">
-            <span class="click-hint">
-                <span class="material-symbols-outlined" style="font-size: 14px;">touch_app</span>
-                ক্লিক করে বড় দেখুন
-            </span>
-        </div>
-
-        <!-- ক্যাপশন / বিশ্বাসযোগ্যতা বাড়ানোর জন্য টেক্সট -->
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 14px; font-size: 13px; color: #aab2c4;">
-            <span style="display: flex; align-items: center; gap: 4px;">
-                <span class="material-symbols-outlined" style="font-size: 18px; color: #f5b342;">verified</span>
-                যাচাইকৃত ক্রেতাদের স্কিনসট
-            </span>
-            <span style="background: #232834; padding: 2px 12px; border-radius: 30px; font-weight: 500;">আপডেট: আজ</span>
-        </div>
-    </div>
-    <!-- ============= CUSTOMERS FEEDBACK সেকশন শেষ ============= -->
-
     <div style="height: 14px;"></div>
 </div>
 
-<!-- ===== লাইটবক্স / মডাল ===== -->
-<div class="lightbox-overlay" id="lightboxOverlay" onclick="closeLightbox()">
-    <span class="lightbox-close" onclick="closeLightbox()">
-        <span class="material-symbols-outlined" style="font-size: 32px;">close</span>
-    </span>
-    <img src="https://i.ibb.co.com/FkBBsdY8/99E91C62-8068-4312-85DC-5B9F95951630.jpg" alt="Screenshot Preview" id="lightboxImage">
-</div>
-
-<!-- STICKY WHATSAPP TAB (compact text) -->
+<!-- STICKY WHATSAPP TAB -->
 <div class="sticky-whatsapp-tab">
     <a href="https://wa.me/8801XXXXXXXXX?text=হ্যালো,%20আমি%20ফেসবুক%20থেকে%20এসেছি।%20আমি%20PUBG%20UC%20কিনতে%20চাই।" 
        class="whatsapp-tab-btn" target="_blank">
@@ -544,27 +394,6 @@
         <span class="material-symbols-outlined" style="font-size:18px;">arrow_forward</span>
     </a>
 </div>
-
-<script>
-    // লাইটবক্স খোলা
-    function openLightbox() {
-        document.getElementById('lightboxOverlay').classList.add('active');
-        document.body.style.overflow = 'hidden'; // স্ক্রল বন্ধ
-    }
-
-    // লাইটবক্স বন্ধ
-    function closeLightbox() {
-        document.getElementById('lightboxOverlay').classList.remove('active');
-        document.body.style.overflow = ''; // স্ক্রল আবার চালু
-    }
-
-    // ESC কী প্রেস করলেও বন্ধ হবে
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeLightbox();
-        }
-    });
-</script>
 
 </body>
 </html>
